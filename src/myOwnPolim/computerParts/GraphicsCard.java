@@ -1,16 +1,20 @@
 package myOwnPolim.computerParts;
 
+import myOwnPolim.AllEnums.TypeGraphicsCard;
+
 public class GraphicsCard {
     private String nameGraphicsCard;
     private TypeGraphicsCard typeGraphicsCard;
-    private int memorySizeGraphicsCard;
     private double frequencyOfCore;
+    private int memorySizeGraphicsCard;
+    private double frequencyOfMemory;
 
-    public GraphicsCard(String nameGraphicsCard, TypeGraphicsCard typeGraphicsCard, int memorySizeGraphicsCard, double frequencyOfCore) {
+    public GraphicsCard(String nameGraphicsCard, TypeGraphicsCard typeGraphicsCard, double frequencyOfCore, int memorySizeGraphicsCard,int frequencyOfMemory) {
         this.nameGraphicsCard = nameGraphicsCard;
         this.typeGraphicsCard = typeGraphicsCard;
-        this.memorySizeGraphicsCard = memorySizeGraphicsCard;
         this.frequencyOfCore = frequencyOfCore;
+        this.memorySizeGraphicsCard = memorySizeGraphicsCard;
+        this.frequencyOfMemory =  frequencyOfMemory;
     }
 
     public String getNameGraphicsCard() {
@@ -29,14 +33,6 @@ public class GraphicsCard {
         this.typeGraphicsCard = typeGraphicsCard;
     }
 
-    public int getMemorySizeGraphicsCard() {
-        return memorySizeGraphicsCard;
-    }
-
-    public void setMemorySizeGraphicsCard(int memorySizeGraphicsCard) {
-        this.memorySizeGraphicsCard = memorySizeGraphicsCard;
-    }
-
     public double getFrequencyOfCore() {
         return frequencyOfCore;
     }
@@ -45,18 +41,30 @@ public class GraphicsCard {
         this.frequencyOfCore = frequencyOfCore;
     }
 
+    public int getMemorySizeGraphicsCard() {
+        return memorySizeGraphicsCard;
+    }
+
+    public void setMemorySizeGraphicsCard(int memorySizeGraphicsCard) {
+        this.memorySizeGraphicsCard = memorySizeGraphicsCard;
+    }
+
+    public double getFrequencyOfMemory() {
+        return frequencyOfMemory;
+    }
+
+    public void setFrequencyOfMemory(double frequencyOfMemory) {
+        this.frequencyOfMemory = frequencyOfMemory;
+    }
+
     @Override
     public String toString() {
-        return "GraphicsCard{" +
-                "nameGraphicsCard='" + nameGraphicsCard + '\'' +
-                ", typeGraphicsCard=" + typeGraphicsCard +
-                ", memorySizeGraphicsCard=" + memorySizeGraphicsCard +
-                ", frequencyOfCore=" + frequencyOfCore +
+        return "GraphicsCard{" + "\n" +
+                "   NameGraphicsCard : " + nameGraphicsCard +  ";\n" +
+                "   TypeGraphicsCard : " + typeGraphicsCard + ";\n" +
+                "   FrequencyOfCore : " + frequencyOfCore + " MHz;\n" +
+                "   MemorySizeGraphicsCard : " + memorySizeGraphicsCard + " MB;\n" +
+                "   FrequencyOfMemory : " + frequencyOfMemory + " MHz;\n" +
                 '}';
     }
-}
-enum TypeGraphicsCard{
-    INTEGRATED,
-    DISCRETE,
-    DESKTOP;
 }

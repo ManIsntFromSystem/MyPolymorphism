@@ -1,4 +1,4 @@
-package myOwnPolim;
+package myOwnPolim.AllEnums;
 
 public enum TypeGraphicsCard {
     INTEGRATED,

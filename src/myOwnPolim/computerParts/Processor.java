@@ -1,5 +1,7 @@
 package myOwnPolim.computerParts;
 
+import myOwnPolim.AllEnums.TypeProcessor;
+
 public class Processor {
     private String nameProcessor;
     private TypeProcessor typeProcessor;
@@ -17,12 +19,12 @@ public class Processor {
 
     @Override
     public String toString() {
-        return "Processor{" +
-                "nameProcessor='" + nameProcessor + '\'' +
-                ", typeProcessor=" + typeProcessor +
-                ", numberOfCores=" + numberOfCores +
-                ", numberOfThreads=" + numberOfThreads +
-                ", frequencyOfCore=" + frequencyOfCore +
+        return "Processor{\n" +
+                "   NameProcessor : " + nameProcessor + ";\n" +
+                "   TypeProcessor : " + typeProcessor + ";\n" +
+                "   NumberOfCores : " + numberOfCores + ";\n" +
+                "   NumberOfThreads :" + numberOfThreads + ";\n" +
+                "   FrequencyOfCore : " + frequencyOfCore + " MHz;\n" +
                 '}';
     }
 }

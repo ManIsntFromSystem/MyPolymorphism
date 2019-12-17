@@ -1,9 +1,7 @@
-package myOwnPolim;
+package myOwnPolim.computerTypes;
 
-import myOwnPolim.computerParts.GraphicsCard;
-import myOwnPolim.computerParts.Motherboard;
-import myOwnPolim.computerParts.Processor;
-import myOwnPolim.computerParts.RAM;
+import myOwnPolim.AllEnums.ComputerType;
+import myOwnPolim.computerParts.*;
 
 public abstract class Computer {
     private ComputerType typeComp;
@@ -13,6 +11,7 @@ public abstract class Computer {
     private GraphicsCard graphicsCard;
     private RAM ram;
     private Motherboard motherboard;
+    private Monitor monitor;
 
     public abstract void eventCalculation();
 
@@ -72,23 +71,25 @@ public abstract class Computer {
         this.motherboard = motherboard;
     }
 
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
+    }
+
     @Override
     public String toString() {
-        return "Computer{" +
-                "typeComp=" + typeComp +
-                ", nameComp='" + nameComp + '\'' +
-                ", descriptionComp='" + descriptionComp + '\'' +
-                ", processor=" + processor +
-                ", graphicsCard=" + graphicsCard +
-                ", ram=" + ram +
-                ", motherboard=" + motherboard +
+        return "Computer{\n" +
+                "   TypeComp : " + typeComp + ";\n" +
+                "   NameComp : " + nameComp + ";\n" +
+                "   DescriptionComp : '" + descriptionComp + ";\n" +
+                "Processor : " + processor +";\n" +
+                "GraphicsCard : " + graphicsCard +";\n" +
+                "RAM : " + ram + ";\n" +
+                "Motherboard : " + motherboard + ";\n" +
+                "Monitor : " + monitor + ";\n" +
                 '}';
     }
-}
-
-enum ComputerType {
-    LAPTOP,
-    DESKTOP,
-    MONOBLOCK,
-    TABLETS;
 }

@@ -1,5 +1,7 @@
 package myOwnPolim.computerParts;
 
+import myOwnPolim.AllEnums.TypeMonitor;
+
 public class Monitor {
     private String nameMonitor;
     private int sizeMonitor;
@@ -13,14 +15,4 @@ public class Monitor {
                 ", typeMonitor=" + typeMonitor +
                 '}';
     }
-}
-
-enum TypeMonitor{
-    IPS,
-    OLED,
-    LED,
-    VA,
-    TN,
-    MVA,
-    QLED;
 }
