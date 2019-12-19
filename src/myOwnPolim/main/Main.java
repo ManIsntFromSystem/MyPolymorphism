@@ -6,15 +6,15 @@ import myOwnPolim.computerParts.*;
 import myOwnPolim.computerTypes.Computer;
 import myOwnPolim.computerTypes.Laptop;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main implements MainController {
-    private List<Computer> computersList = new ArrayList<>();
 
     public static void main(String[] args) {
-        MainScreen mainScreen = new MainScreen();
-        mainScreen.createGUI().setVisible(true);
+        CreateMainScreen createMainScreen = new CreateMainScreen();
+        createMainScreen.CreateGUI();
     }
 
     @Override
@@ -36,21 +36,22 @@ public class Main implements MainController {
 
     @Override
     public void save(Computer computer) {
-        computersList.add( computer);
+        //computersList.add( computer);
     }
 
     @Override
     public void remove(Computer computer) {
-        computersList.remove(computer)
+        //computersList.remove(computer);
     }
 
     @Override
     public Computer getById(Integer id) {
-        computersList.get(computersList.indexOf(id));
+        return null;//computersList.get(computersList.indexOf(id));
     }
 
     @Override
     public List<Computer> getComputers() {
-        return computersList;
+        //return computersList;
+        return null;
     }
 }
