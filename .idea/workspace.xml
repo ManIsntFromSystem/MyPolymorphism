@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="294" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -25,14 +28,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="261" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyJavaLessons/MyJavaProjects/MyAWT" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism" />
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src" />
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src\myOwnPolim\source\icons" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src\source\icons" />
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src\icons" />
+      <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism" />
       <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src" />
       <recent name="E:\JAVA &amp;&amp; Android\MyPolymorphism\src\myOwnPolim\source\icons" />
     </key>
@@ -109,36 +120,52 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="479" y="267" width="410" height="242" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1576255282814" />
-    <state x="547" y="174" key="FileChooserDialogImpl" timestamp="1576735320298">
+    <state x="547" y="174" key="FileChooserDialogImpl" timestamp="1576832211508">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="389" y="124" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1576597047543" />
-    <state x="547" y="174" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1576735320298" />
-    <state width="1877" height="304" key="GridCell.Tab.0.bottom" timestamp="1576765119625">
+    <state x="547" y="174" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1576832211508" />
+    <state width="1860" height="194" key="GridCell.Tab.0.bottom" timestamp="1576848721970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1322" height="41" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576602039033" />
-    <state width="1877" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576765119625" />
-    <state width="1877" height="304" key="GridCell.Tab.0.center" timestamp="1576765119624">
+    <state width="1860" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721970" />
+    <state width="1860" height="194" key="GridCell.Tab.0.center" timestamp="1576848721970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1322" height="41" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1576602039032" />
-    <state width="1877" height="304" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576765119624" />
-    <state width="1877" height="304" key="GridCell.Tab.0.left" timestamp="1576765119624">
+    <state width="1860" height="194" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721970" />
+    <state width="1860" height="194" key="GridCell.Tab.0.left" timestamp="1576848721970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1322" height="41" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1576602039032" />
-    <state width="1877" height="304" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576765119624" />
-    <state width="1877" height="304" key="GridCell.Tab.0.right" timestamp="1576765119624">
+    <state width="1860" height="194" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721970" />
+    <state width="1860" height="194" key="GridCell.Tab.0.right" timestamp="1576848721970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1322" height="41" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1576602039032" />
-    <state width="1877" height="304" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576765119624" />
-    <state x="229" y="0" key="SettingsEditor" timestamp="1576651951463">
+    <state width="1860" height="194" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721970" />
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom" timestamp="1576848721968">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721968" />
+    <state width="1877" height="341" key="GridCell.Tab.1.center" timestamp="1576848721968">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721968" />
+    <state width="1877" height="341" key="GridCell.Tab.1.left" timestamp="1576848721968">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721968" />
+    <state width="1877" height="341" key="GridCell.Tab.1.right" timestamp="1576848721968">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="341" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576848721968" />
+    <state x="229" y="0" key="SettingsEditor" timestamp="1576825723531">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1576597062752" />
-    <state x="229" y="0" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576651951463" />
+    <state x="229" y="0" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1576825723531" />
     <state x="839" y="334" key="UIDesigner.ListEditorDialog" timestamp="1576653222433">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -161,5 +188,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="192" width="672" height="676" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1576241937089" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyPolymorphism$Main.ic" NAME="Main Coverage Results" MODIFIED="1576824062305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>myOwnPolim.*</FILTER>
+    </SUITE>
   </component>
 </project>
