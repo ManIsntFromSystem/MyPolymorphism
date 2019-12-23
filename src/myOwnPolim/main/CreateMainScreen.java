@@ -53,16 +53,63 @@ public class CreateMainScreen{
 
     private JPanel createFilterJPanel() {
         JPanel jPanFilter = new JPanel();
-        GridBagLayout gbag =new GridBagLayout();
+        GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-        jPanFilter.setLayout(gbag);
+        gbc.weightx = 1;
+        gbc.weighty = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        jPanFilter.setLayout(new GridBagLayout());
         JLabel jlabSearchName = new JLabel("Input Name: ");
+        gbc.fill   = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.insets = new Insets(10,10,0,0);
+        gbc.gridheight = 1;
+        gbc.gridwidth  = 1;
+        gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbl.setConstraints(jlabSearchName, gbc);
         jPanFilter.add(jlabSearchName);
 
-        JTextField jTxtFSearchName = new JTextField();
+        JTextField jTxtFSearchName = new JTextField(35);
+        gbc.fill   = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.insets = new Insets(10,-120,0,0);
+        gbc.gridheight = 1;
+        gbc.gridwidth  = GridBagConstraints.REMAINDER;
+        gbc.ipadx = 32;
+        gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbl.setConstraints(jTxtFSearchName, gbc);
         jPanFilter.add(jTxtFSearchName);
+
+       /* JButton jButtonSearch = new JButton("Search");
+        gbc.fill   = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.insets = new Insets(5,10,0,0);
+        gbc.gridheight = 1;
+        gbc.gridwidth  = GridBagConstraints.REMAINDER;
+        gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbl.setConstraints(jButtonSearch, gbc);
+        jPanFilter.add(jButtonSearch);*/
+
+       //restore the changed parameters
+        gbc.ipadx = 0;
+        gbc.gridwidth  = 1;
+        gbc.gridy = 2;
+
+        JLabel jlabChooseTypeOfComp = new JLabel("Choose type of computer: ");
+        gbc.fill   = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.insets = new Insets(10,10,0,0);
+        gbc.gridheight = 1;
+        gbc.gridwidth  = 1;
+        gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbl.setConstraints(jlabChooseTypeOfComp, gbc);
+        jPanFilter.add(jlabChooseTypeOfComp);
+
+        jPanFilter.setLayout(gbl);
 
         return jPanFilter;
     }
