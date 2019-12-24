@@ -1,9 +1,10 @@
 package myOwnPolim.main;
 
+import myOwnPolim.AllEnums.ComputerType;
+
 import javax.swing.*;
 import java.awt.*;
-
-import static java.awt.BorderLayout.WEST;
+import java.util.Arrays;
 
 public class CreateMainScreen{
     private JFrame jFrame;
@@ -52,64 +53,49 @@ public class CreateMainScreen{
     }
 
     private JPanel createFilterJPanel() {
-        JPanel jPanFilter = new JPanel();
+        String[] compType = Arrays.toString(ComputerType.values()).
+                replaceAll("^.|.$", "").split(", ");
+
+        JPanel jPanFilter = new JPanel(new GridBagLayout());
+        jPanFilter.setBorder(BorderFactory.createEmptyBorder(4, 10, 10, 10));
         GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.weightx = 1;
-        gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         JLabel jlabSearchName = new JLabel("Input Name: ");
-        gbc.fill   = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.NORTHWEST;
-        gbc.insets = new Insets(10,10,0,0);
-        gbc.gridheight = 1;
-        gbc.gridwidth  = 1;
-        gbc.gridx = GridBagConstraints.RELATIVE;
-        gbc.gridy = GridBagConstraints.RELATIVE;
+        JTextField jTxtFSearchName = new JTextField(40);
+
+        JLabel jlabTypeOfComp = new JLabel("Computer type: ");
+        JComboBox compTypeJCB = new JComboBox(compType);
+
+        JLabel jlabTypeOfProcessor = new JLabel("Processor type: ");
+        Box sizeBox = Box.createVerticalBox();
+        JRadioButton processorDisTypeJRB = new JRadioButton("Discrete", true);
+        JRadioButton processorInTypeJRB = new JRadioButton("Integrated", false);
+        ButtonGroup buttonGroupProc = new ButtonGroup();
+        buttonGroupProc.add(processorDisTypeJRB);
+        buttonGroupProc.add(processorInTypeJRB);
+        sizeBox.add(processorDisTypeJRB);
+        sizeBox.add(processorInTypeJRB);
+        sizeBox.setBorder(BorderFactory.createTitledBorder("Processor: "));
+
         gbl.setConstraints(jlabSearchName, gbc);
         jPanFilter.add(jlabSearchName);
 
-        JTextField jTxtFSearchName = new JTextField(35);
-        gbc.fill   = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.NORTHWEST;
-        gbc.insets = new Insets(10,-120,0,0);
-        gbc.gridheight = 1;
-        gbc.gridwidth  = GridBagConstraints.REMAINDER;
-        gbc.ipadx = 32;
-        gbc.gridx = GridBagConstraints.RELATIVE;
-        gbc.gridy = GridBagConstraints.RELATIVE;
         gbl.setConstraints(jTxtFSearchName, gbc);
         jPanFilter.add(jTxtFSearchName);
 
-       /* JButton jButtonSearch = new JButton("Search");
-        gbc.fill   = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.NORTHWEST;
-        gbc.insets = new Insets(5,10,0,0);
-        gbc.gridheight = 1;
-        gbc.gridwidth  = GridBagConstraints.REMAINDER;
-        gbc.gridx = GridBagConstraints.RELATIVE;
-        gbc.gridy = GridBagConstraints.RELATIVE;
-        gbl.setConstraints(jButtonSearch, gbc);
-        jPanFilter.add(jButtonSearch);*/
 
-       //restore the changed parameters
-        gbc.ipadx = 0;
-        gbc.gridwidth  = 1;
-        gbc.gridy = 2;
+        gbl.setConstraints(jlabTypeOfComp, gbc);
+        jPanFilter.add(jlabTypeOfComp);
 
-        JLabel jlabChooseTypeOfComp = new JLabel("Choose type of computer: ");
-        gbc.fill   = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.NORTHWEST;
-        gbc.insets = new Insets(10,10,0,0);
-        gbc.gridheight = 1;
-        gbc.gridwidth  = 1;
-        gbc.gridx = GridBagConstraints.RELATIVE;
-        gbc.gridy = GridBagConstraints.RELATIVE;
-        gbl.setConstraints(jlabChooseTypeOfComp, gbc);
-        jPanFilter.add(jlabChooseTypeOfComp);
+        gbl.setConstraints(compTypeJCB, gbc);
+        jPanFilter.add(compTypeJCB);
 
-        jPanFilter.setLayout(gbl);
+        gbl.setConstraints(jlabTypeOfProcessor, gbc);
+        jPanFilter.add(jlabTypeOfProcessor);
+
+        gbl.setConstraints(sizeBox, gbc);
+        jPanFilter.add(sizeBox);
 
         return jPanFilter;
     }
