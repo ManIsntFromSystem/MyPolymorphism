@@ -1,9 +1,14 @@
 package myOwnPolim.main;
 
 import myOwnPolim.AllEnums.ComputerType;
+import myOwnPolim.computerTypes.Computer;
+import myOwnPolim.computerTypes.Laptop;
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CreateMainScreen{
@@ -58,7 +63,7 @@ public class CreateMainScreen{
 
         JPanel jPanFilter = new JPanel(new GridBagLayout());
         jPanFilter.setBorder(BorderFactory.createEmptyBorder(4, 10, 10, 10));
-        GridBagLayout gbl = new GridBagLayout();
+        //GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel jlabSearchName = new JLabel("Input Name: ");
@@ -67,35 +72,43 @@ public class CreateMainScreen{
         JLabel jlabTypeOfComp = new JLabel("Computer type: ");
         JComboBox compTypeJCB = new JComboBox(compType);
 
-        JLabel jlabTypeOfProcessor = new JLabel("Processor type: ");
+        //JLabel jlabTypeOfProcessor = new JLabel("Processor type: ");
         Box sizeBox = Box.createVerticalBox();
         JRadioButton processorDisTypeJRB = new JRadioButton("Discrete", true);
         JRadioButton processorInTypeJRB = new JRadioButton("Integrated", false);
-        ButtonGroup buttonGroupProc = new ButtonGroup();
-        buttonGroupProc.add(processorDisTypeJRB);
-        buttonGroupProc.add(processorInTypeJRB);
         sizeBox.add(processorDisTypeJRB);
         sizeBox.add(processorInTypeJRB);
         sizeBox.setBorder(BorderFactory.createTitledBorder("Processor: "));
+        JTable jTableComps = new JTable();
 
-        gbl.setConstraints(jlabSearchName, gbc);
-        jPanFilter.add(jlabSearchName);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        //gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.anchor = GridBagConstraints.EAST;
+        //gbc.fill = GridBagConstraints.NONE;
+        gbc.insets = new Insets(5,0,0,0);
+        jPanFilter.add(jlabSearchName, gbc);
 
-        gbl.setConstraints(jTxtFSearchName, gbc);
-        jPanFilter.add(jTxtFSearchName);
 
+        gbc.gridwidth = 1;
+        gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.anchor = GridBagConstraints.WEST;
+        jPanFilter.add(jTxtFSearchName, gbc);
 
-        gbl.setConstraints(jlabTypeOfComp, gbc);
-        jPanFilter.add(jlabTypeOfComp);
+        gbc.gridy++;
+        gbc.anchor = GridBagConstraints.EAST;
+        //gbc.fill = GridBagConstraints.NONE;
+        jPanFilter.add(jlabTypeOfComp, gbc);
 
-        gbl.setConstraints(compTypeJCB, gbc);
-        jPanFilter.add(compTypeJCB);
+        gbc.anchor = GridBagConstraints.WEST;
+        jPanFilter.add(compTypeJCB, gbc);
+        jPanFilter.add(sizeBox, gbc);
 
-        gbl.setConstraints(jlabTypeOfProcessor, gbc);
-        jPanFilter.add(jlabTypeOfProcessor);
-
-        gbl.setConstraints(sizeBox, gbc);
-        jPanFilter.add(sizeBox);
+        gbc.gridy++;
+        gbc.gridx = GridBagConstraints.HORIZONTAL;
+        gbc.gridheight = 10;
+        jPanFilter.add(jTableComps, gbc);
 
         return jPanFilter;
     }
