@@ -12,6 +12,7 @@ public abstract class Computer {
     private RAM ram;
     private Motherboard motherboard;
     private Monitor monitor;
+    private String compImageIcon;
 
     public abstract void eventCalculation();
 
@@ -79,6 +80,14 @@ public abstract class Computer {
         this.monitor = monitor;
     }
 
+    public String getCompImageIcon() {
+        return compImageIcon;
+    }
+
+    public void setCompImageIcon(String compImageIcon) {
+        this.compImageIcon = compImageIcon;
+    }
+
     @Override
     public String toString() {
         return "Computer{\n" +
@@ -90,6 +99,7 @@ public abstract class Computer {
                 "RAM : " + ram + ";\n" +
                 "Motherboard : " + motherboard + ";\n" +
                 "Monitor : " + monitor + ";\n" +
+                "Image : " + compImageIcon + ";\n" +
                 '}';
     }
 }

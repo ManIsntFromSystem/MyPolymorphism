@@ -20,6 +20,46 @@ public class Motherboard {
         this.numberOfSlotsRAM = numberOfSlotsRAM;
     }
 
+    public String getNameMotherboard() {
+        return nameMotherboard;
+    }
+
+    public void setNameMotherboard(String nameMotherboard) {
+        this.nameMotherboard = nameMotherboard;
+    }
+
+    public TypeFormFactor getTypeFormFactor() {
+        return typeFormFactor;
+    }
+
+    public void setTypeFormFactor(TypeFormFactor typeFormFactor) {
+        this.typeFormFactor = typeFormFactor;
+    }
+
+    public TypeChipset getTypeChipset() {
+        return typeChipset;
+    }
+
+    public void setTypeChipset(TypeChipset typeChipset) {
+        this.typeChipset = typeChipset;
+    }
+
+    public TypeSocket getTypeSocket() {
+        return typeSocket;
+    }
+
+    public void setTypeSocket(TypeSocket typeSocket) {
+        this.typeSocket = typeSocket;
+    }
+
+    public int getNumberOfSlotsRAM() {
+        return numberOfSlotsRAM;
+    }
+
+    public void setNumberOfSlotsRAM(int numberOfSlotsRAM) {
+        this.numberOfSlotsRAM = numberOfSlotsRAM;
+    }
+
     @Override
     public String toString() {
         return "Motherboard{\n" +

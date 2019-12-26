@@ -11,6 +11,30 @@ public class RAM {
         this.frequencyOfRAM = frequencyOfRAM;
     }
 
+    public String getNameRAM() {
+        return nameRAM;
+    }
+
+    public void setNameRAM(String nameRAM) {
+        this.nameRAM = nameRAM;
+    }
+
+    public int getMemorySizeRAM() {
+        return memorySizeRAM;
+    }
+
+    public void setMemorySizeRAM(int memorySizeRAM) {
+        this.memorySizeRAM = memorySizeRAM;
+    }
+
+    public double getFrequencyOfRAM() {
+        return frequencyOfRAM;
+    }
+
+    public void setFrequencyOfRAM(double frequencyOfRAM) {
+        this.frequencyOfRAM = frequencyOfRAM;
+    }
+
     @Override
     public String toString() {
         return "RAM{\n" +

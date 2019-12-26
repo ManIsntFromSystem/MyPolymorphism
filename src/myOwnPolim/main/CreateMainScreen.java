@@ -1,19 +1,17 @@
 package myOwnPolim.main;
 
 import myOwnPolim.AllEnums.ComputerType;
-import myOwnPolim.computerTypes.Computer;
-import myOwnPolim.computerTypes.Laptop;
-
 import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.awt.*;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CreateMainScreen{
     private JFrame jFrame;
     private JPanel jPanel;
+    private JPanel jPanFilter;
+    private JPanel jPanAdd;
+    private JPanel jPanUser;
+
     public void CreateGUI(){
         createJFrame();
         createJTabMain();
@@ -22,6 +20,7 @@ public class CreateMainScreen{
 
     private void createJFrame(){
         jFrame = new JFrame();
+        jPanel = new JPanel();
         jFrame.setTitle("Reviewer Computers");
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -34,7 +33,6 @@ public class CreateMainScreen{
     private void createJTabMain(){
         JTabbedPane jTabPan  = new JTabbedPane();
 
-
         ImageIcon iconFilter = new ImageIcon("src/source/icons/computerWind.png");
         ImageIcon iconAddComp = new ImageIcon("src/source/icons/computerAdd2.png");
         ImageIcon iconUser = new ImageIcon("src/source/icons/user2.png");
@@ -42,28 +40,21 @@ public class CreateMainScreen{
         JPanel jpFilterTab = createFilterJPanel();
         jTabPan.addTab("Filter of Computers", iconFilter, jpFilterTab, "");
 
-        JPanel jpAddTab = createInnerPanel("");
+        JPanel jpAddTab = createAddPanel();
         jTabPan.addTab("Add new Computer", iconAddComp, jpAddTab, "");
 
-        JPanel jpUserTab = createInnerPanel("");
+        JPanel jpUserTab = createUserPanel();
         jTabPan.addTab("User info", iconUser, jpUserTab, "");
 
         jFrame.add(jTabPan);
     }
 
-    private JPanel createInnerPanel(String text) {
-        JPanel jPanel = new JPanel();
-        jPanel.add(new JLabel(text));
-        return jPanel;
-    }
-
-    private JPanel createFilterJPanel() {
+   private JPanel createFilterJPanel() {
         String[] compType = Arrays.toString(ComputerType.values()).
                 replaceAll("^.|.$", "").split(", ");
 
-        JPanel jPanFilter = new JPanel(new GridBagLayout());
+        jPanFilter = new JPanel(new GridBagLayout());
         jPanFilter.setBorder(BorderFactory.createEmptyBorder(4, 10, 10, 10));
-        //GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel jlabSearchName = new JLabel("Input Name: ");
@@ -72,44 +63,60 @@ public class CreateMainScreen{
         JLabel jlabTypeOfComp = new JLabel("Computer type: ");
         JComboBox compTypeJCB = new JComboBox(compType);
 
-        //JLabel jlabTypeOfProcessor = new JLabel("Processor type: ");
-        Box sizeBox = Box.createVerticalBox();
-        JRadioButton processorDisTypeJRB = new JRadioButton("Discrete", true);
+        Box sizeBoxProc = Box.createVerticalBox();
+        JRadioButton processorDisTypeJRB = new JRadioButton("Discrete", false);
         JRadioButton processorInTypeJRB = new JRadioButton("Integrated", false);
-        sizeBox.add(processorDisTypeJRB);
-        sizeBox.add(processorInTypeJRB);
-        sizeBox.setBorder(BorderFactory.createTitledBorder("Processor: "));
-        JTable jTableComps = new JTable();
+        sizeBoxProc.add(processorDisTypeJRB);
+        sizeBoxProc.add(processorInTypeJRB);
+        sizeBoxProc.setBorder(BorderFactory.createTitledBorder("Processor: "));
+
+        Box sizeBoxGraphCard = Box.createVerticalBox();
+        JCheckBox graphCardDisTypeJCB = new JCheckBox("Discrete", false);
+        JCheckBox graphCardInTypeJCB = new JCheckBox("Integrated", false);
+        sizeBoxGraphCard.add(graphCardDisTypeJCB);
+        sizeBoxGraphCard.add(graphCardInTypeJCB);
+        sizeBoxGraphCard.setBorder(BorderFactory.createTitledBorder("Graphics card: "));
+
+        //ComputersJlist computersJlist = new ComputersJlist();
+        //JTable jTableComps = new JTable();
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 1;
-        //gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.gridwidth = 4;
         gbc.anchor = GridBagConstraints.EAST;
-        //gbc.fill = GridBagConstraints.NONE;
         gbc.insets = new Insets(5,0,0,0);
         jPanFilter.add(jlabSearchName, gbc);
 
-
-        gbc.gridwidth = 1;
         gbc.gridx = GridBagConstraints.RELATIVE;
+        gbc.ipadx = 300;
         gbc.anchor = GridBagConstraints.WEST;
         jPanFilter.add(jTxtFSearchName, gbc);
 
         gbc.gridy++;
+        gbc.ipadx = 0;
         gbc.anchor = GridBagConstraints.EAST;
-        //gbc.fill = GridBagConstraints.NONE;
         jPanFilter.add(jlabTypeOfComp, gbc);
-
         gbc.anchor = GridBagConstraints.WEST;
         jPanFilter.add(compTypeJCB, gbc);
-        jPanFilter.add(sizeBox, gbc);
+        gbc.insets = new Insets(5,5,0,0);
+        jPanFilter.add(sizeBoxProc, gbc);
+        gbc.ipadx = 10;
+        jPanFilter.add(sizeBoxGraphCard, gbc);
 
-        gbc.gridy++;
-        gbc.gridx = GridBagConstraints.HORIZONTAL;
-        gbc.gridheight = 10;
-        jPanFilter.add(jTableComps, gbc);
+       //gbc.gridy++;
+       //gbc.ipadx = 0;
+       //jPanFilter.add(computersJlist, gbc);
 
         return jPanFilter;
+    }
+
+    private JPanel createAddPanel() {
+        jPanAdd = new JPanel(new GridBagLayout());
+        return jPanAdd;
+    }
+
+    private JPanel createUserPanel() {
+        jPanUser = new JPanel(new GridBagLayout());
+        return jPanUser;
     }
 }

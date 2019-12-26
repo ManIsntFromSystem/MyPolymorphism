@@ -1,8 +1,7 @@
-package Control;
+package myOwnPolim.Control;
 
 import myOwnPolim.computerTypes.Computer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface MainController {

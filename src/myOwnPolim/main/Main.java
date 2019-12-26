@@ -1,13 +1,13 @@
 package myOwnPolim.main;
 
-import Control.MainController;
+import myOwnPolim.Control.MainController;
 import myOwnPolim.AllEnums.*;
 import myOwnPolim.computerParts.*;
 import myOwnPolim.computerTypes.Computer;
+import myOwnPolim.computerTypes.Desktop;
 import myOwnPolim.computerTypes.Laptop;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main implements MainController {
@@ -19,19 +19,19 @@ public class Main implements MainController {
 
     @Override
     public void addComputer(){
-        Computer laptop = new Laptop();
+        Computer desktop = new Desktop();
         Laptop laptop2 = new Laptop();
-        laptop.setTypeComp(ComputerType.DESKTOP);
-        laptop.setNameComp("MSI Aegis 3 8RC-206RU");
-        laptop.setDescriptionComp("Powerful beast");
-        laptop.setProcessor(new Processor("Intel Core i7-8700", TypeProcessor.DISCRETE,
+        desktop.setTypeComp(ComputerType.DESKTOP);
+        desktop.setNameComp("MSI Aegis 3 8RC-206RU");
+        desktop.setDescriptionComp("Powerful beast");
+        desktop.setProcessor(new Processor("Intel Core i7-8700", TypeProcessor.DISCRETE,
                 6, 12, 3200.0));
-        laptop.setGraphicsCard(new GraphicsCard("NVIDIA GeForce GTX 1060", TypeGraphicsCard.DISCRETE,
+        desktop.setGraphicsCard(new GraphicsCard("NVIDIA GeForce GTX 1060", TypeGraphicsCard.DISCRETE,
                 1556,6144, 8008));
-        laptop.setRam(new RAM(null, 8, 2400));
-        laptop.setMotherboard(new Motherboard("MSI B360", TypeFormFactor.ATX, TypeChipset.INTEL_B_360, TypeSocket.LGA_1151_V2, 4));
-        laptop.setMonitor(null);
-        System.out.println(laptop);
+        desktop.setRam(new RAM(null, 8, 2400));
+        desktop.setMotherboard(new Motherboard("MSI B360", TypeFormFactor.ATX, TypeChipset.INTEL_B_360, TypeSocket.LGA_1151_V2, 4));
+        desktop.setMonitor(null);
+        System.out.println(desktop);
     }
 
     @Override
