@@ -5,14 +5,14 @@ import myOwnPolim.computerTypes.Computer;
 import javax.swing.*;
 import java.awt.*;
 
-public class ComputersJlist extends JPanel implements ListCellRenderer<Computer> {
+public class ComputersRender extends JPanel implements ListCellRenderer<Computer> {
 
     private JLabel lbNameComp = new JLabel();
     private JLabel lbNameProc = new JLabel();
     private JLabel lbNameGraphCard = new JLabel();
     private JLabel lbImageIcon = new JLabel();
 
-    public ComputersJlist() {
+    public ComputersRender() {
         setLayout(new BorderLayout(5,5));
         JPanel panelComps = new JPanel(new GridLayout(0,1));
         panelComps.add(lbNameComp);

@@ -3,7 +3,9 @@ package myOwnPolim.computerTypes;
 import myOwnPolim.AllEnums.ComputerType;
 import myOwnPolim.computerParts.*;
 
-public abstract class Computer {
+import javax.swing.*;
+
+public class Computer {
     private ComputerType typeComp;
     private String nameComp;
     private String descriptionComp;
@@ -12,9 +14,22 @@ public abstract class Computer {
     private RAM ram;
     private Motherboard motherboard;
     private Monitor monitor;
-    private String compImageIcon;
+    private String compImageStr;
+    private ImageIcon compImageIcon;
 
-    public abstract void eventCalculation();
+    public Computer(ComputerType typeComp, String nameComp, String descriptionComp, Processor processor, GraphicsCard graphicsCard, RAM ram, Motherboard motherboard, Monitor monitor, String compImageStr) {
+        this.typeComp = typeComp;
+        this.nameComp = nameComp;
+        this.descriptionComp = descriptionComp;
+        this.processor = processor;
+        this.graphicsCard = graphicsCard;
+        this.ram = ram;
+        this.motherboard = motherboard;
+        this.monitor = monitor;
+        this.compImageStr = compImageStr;
+    }
+
+    public void eventCalculation() {}
 
     public ComputerType getTypeComp() {
         return typeComp;
@@ -80,11 +95,14 @@ public abstract class Computer {
         this.monitor = monitor;
     }
 
-    public String getCompImageIcon() {
+    public ImageIcon getCompImageIcon() {
+        if (compImageIcon == null) {
+            compImageIcon = new ImageIcon(compImageStr);
+        }
         return compImageIcon;
     }
 
-    public void setCompImageIcon(String compImageIcon) {
+    public void setCompImageIcon(ImageIcon compImageIcon) {
         this.compImageIcon = compImageIcon;
     }
 

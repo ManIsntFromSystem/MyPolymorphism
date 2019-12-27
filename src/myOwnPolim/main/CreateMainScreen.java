@@ -26,7 +26,7 @@ public class CreateMainScreen{
         Toolkit toolkit = Toolkit.getDefaultToolkit();
 
         Dimension dimension = toolkit.getScreenSize();
-        jFrame.setBounds(dimension.width/2 - 350, dimension.height/2 -250, 700, 500);
+        jFrame.setBounds(dimension.width/2 - 300, dimension.height/2 -250, 600, 500);
         jFrame.setLayout(new BorderLayout());
         jFrame.setVisible(true);
     }
@@ -58,7 +58,7 @@ public class CreateMainScreen{
         GridBagConstraints gbc = new GridBagConstraints();
 
         JLabel jlabSearchName = new JLabel("Input Name: ");
-        JTextField jTxtFSearchName = new JTextField(40);
+        JTextField jTxtFSearchName = new JTextField(35);
 
         JLabel jlabTypeOfComp = new JLabel("Computer type: ");
         JComboBox compTypeJCB = new JComboBox(compType);
@@ -77,35 +77,49 @@ public class CreateMainScreen{
         sizeBoxGraphCard.add(graphCardInTypeJCB);
         sizeBoxGraphCard.setBorder(BorderFactory.createTitledBorder("Graphics card: "));
 
-        //ComputersJlist computersJlist = new ComputersJlist();
+        ComputersRender computersJlist = new ComputersRender();
         //JTable jTableComps = new JTable();
+
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 4;
+        gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.EAST;
+        gbc.fill = GridBagConstraints.NONE;
         gbc.insets = new Insets(5,0,0,0);
         jPanFilter.add(jlabSearchName, gbc);
 
-        gbc.gridx = GridBagConstraints.RELATIVE;
-        gbc.ipadx = 300;
-        gbc.anchor = GridBagConstraints.WEST;
+        gbc.gridx = 1;
+        gbc.gridwidth = 4;
+        gbc.insets = new Insets(5,15,0,0);
         jPanFilter.add(jTxtFSearchName, gbc);
 
+
         gbc.gridy++;
-        gbc.ipadx = 0;
-        gbc.anchor = GridBagConstraints.EAST;
-        jPanFilter.add(jlabTypeOfComp, gbc);
+        gbc.gridx = 0;
+        gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(5,0,0,0);
+       jPanFilter.add(jlabTypeOfComp, gbc);
+
+        gbc.insets = new Insets(5,15,0,0);
+        gbc.gridx = 2;
         jPanFilter.add(compTypeJCB, gbc);
-        gbc.insets = new Insets(5,5,0,0);
+
+        gbc.gridx = 3;
+        gbc.anchor = GridBagConstraints.CENTER;
         jPanFilter.add(sizeBoxProc, gbc);
+
+        gbc.gridx = 4;
         gbc.ipadx = 10;
         jPanFilter.add(sizeBoxGraphCard, gbc);
 
-       //gbc.gridy++;
-       //gbc.ipadx = 0;
-       //jPanFilter.add(computersJlist, gbc);
+        gbc.gridy++;
+        gbc.gridx = 0;
+        gbc.gridwidth = 4;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets = new Insets(5,0,0,0);
+        jPanFilter.add(computersJlist, gbc);
 
         return jPanFilter;
     }
